@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string('mobile', 15)->unique();
             $table->string('email', 255)->unique();
             $table->string('password', 255);
-            $table->unsignedBigInteger('address_id');
-            $table->unsignedBigInteger('role_id');
+            $table->string('address');
             $table->date('birthdate');
         });
     }
