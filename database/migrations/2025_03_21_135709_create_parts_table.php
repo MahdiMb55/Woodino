@@ -30,6 +30,9 @@ return new class extends Migration
             $table->foreign('code_id')->references('id')->on('codes');
             $table->string('uploaded_file', 255)->nullable();
             $table->string('pakh_type', 255)->nullable();
+            $table->string('price_type');
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();

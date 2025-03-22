@@ -18,8 +18,11 @@ return new class extends Migration
             $table->string('mobile', 15)->unique();
             $table->string('email', 255)->unique();
             $table->string('password', 255);
-            $table->string('address');
-            $table->date('birthdate');
+            $table->string('address')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

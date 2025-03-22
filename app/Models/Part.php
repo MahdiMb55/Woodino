@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Part extends Model
 
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'height',
@@ -23,7 +23,8 @@ class Part extends Model
         'category_id',
         'code_id',
         'uploaded_file',
-        'pakh_type'
+        'pakh_type',
+        'price_type',
     ];
 
     public function thickness()

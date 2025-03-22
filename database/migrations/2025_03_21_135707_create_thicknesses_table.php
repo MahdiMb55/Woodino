@@ -17,6 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255);
             $table->bigInteger('price');
+            $table->string('price_type');
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();

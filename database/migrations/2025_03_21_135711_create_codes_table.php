@@ -29,6 +29,8 @@ return new class extends Migration
             $table->bigInteger('max_width')->nullable();
             $table->bigInteger('fixed_width')->nullable();
             $table->bigInteger('fixed_height')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();

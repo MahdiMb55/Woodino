@@ -29,6 +29,8 @@ return new class extends Migration
             $table->boolean('is_kasri');
             $table->unsignedBigInteger('main_order_id')->nullable();
             $table->integer('status');
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
