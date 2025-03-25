@@ -34,4 +34,15 @@ class Code extends Model
     {
         return $this->belongsTo(Thickness::class);
     }
+
+    public function extraCodes()
+    {
+        return $this->hasMany(ExtraCode::class);
+    }
+
+    // ارتباط چند به چند با ExtraCode (فرزند)
+    public function extraCodesChildren()
+    {
+        return $this->belongsToMany(ExtraCode::class, 'code_extra_code', 'code_id', 'extra_code_id');
+    }
 }
